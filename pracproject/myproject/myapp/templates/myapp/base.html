@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BASE HTML</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/base.css' %}">
+</head>
+<body style="background-color:white;">
+    <nav class="navbar navbar-inverse">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <a class="navbar-brand" href="#">MyApplication</a>
+        </div>
+        <ul class="nav navbar-nav">
+            <li class=""><a href="{% url 'home_page' %}">Home</a></li>
+            <li class=""><a href="{% url 'person_list' %}">About</a></li>
+        </ul>
+        <ul class="nav navbar-nav navbar-right">
+
+            {% if user.is_authenticated %}
+                <li>
+                    <a  href="{% url 'logout' %}" >Logout</a>
+                </li>
+
+                {% if user.is_superuser %}
+                    <li>
+                        <a  href="{% url 'new_customer_entry' %}" >Entry</a>
+                    </li>
+                    <li>
+                        <a  href="{% url 'customer_list' %}" >Customers</a>
+                    </li>
+                    <li>
+                        <a  href="{% url 'add_person' %}" >Add</a>
+                    </li>
+                    <li>
+                      <a >Welcome: {{ user.username }}</a>
+                    </li>
+                {%else%}
+                    <li>
+                      <a >Welcome User: {{ user.username }}</a>
+                    </li>
+                {% endif %}
+            {% else %}
+                    <li><a  href="{% url 'user_login' %}" ><span  style="margin:5px;" class=""></span>Login</a></li>
+                    <li><a  href="{% url 'signup' %}" ><span  style="margin:5px;" class=""></span>SignUp</a></li>
+                    <li><a  href="{% url 'login' %}" ><span  style="margin:5px;" class="glyphicon glyphicon-user"></span></a></li>
+            {% endif %}
+        </ul>
+      </div>
+    </nav>
+
+    <div class="container">
+        <div class="jumbotron text-center">
+                <h1>Base</h1>
+        </div>
+    </div>
+    {% block content %}
+        <div class="container">
+            <div class="text-center">
+                <h1>Welcome Home Page</h1>
+            </div>
+        </div>
+
+    {% if user.is_authenticated%}
+        <div class="container">
+            <div class="text-center">
+                <img src="{%static 'images/welcome.jpg'%}" width="500px", height="500px">
+            </div>
+        </div>
+    {% endif %}
+    {% endblock %}
+</body>
+</html>

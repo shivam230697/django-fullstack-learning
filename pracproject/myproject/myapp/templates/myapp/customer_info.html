@@ -1,0 +1,48 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="jumbotron text-center">
+            <div class="container container-fluid">
+                <div class="row">
+                    <div class="col-sm-6"> <b>RST Number</b> </div>
+                    <div class="col-sm-6" >{{object.rst_number}}</div>
+
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-6" ><b>Customer Name</b> </div>
+                    <div class="col-sm-6" >{{object.customer_name}}</div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-6" ><b>Vehicle Number</b> </div>
+                    <div class="col-sm-6" >{{object.vehicle_number}}</div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-6" ><b>Charges</b> </div>
+                    <div class="col-sm-6" >{{object.charges}}</div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-6" ><b>Tare Weight</b> </div>
+                    <div class="col-sm-6" >{{object.tare_weight}}</div>
+                </div>
+                <hr>
+                <div class="row">
+                     <div class="col-sm-6" ><b>Gross Weight</b> </div>
+                    <div class="col-sm-6" >{{object.gross_weight}}</div>
+                </div>
+                <hr>
+                <div class="row">
+                    <div class="col-sm-6" ><b>Net Weight</b> </div>
+                    <div class="col-sm-6" >{{object.net_weight}}</div>
+                </div>
+                <hr>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

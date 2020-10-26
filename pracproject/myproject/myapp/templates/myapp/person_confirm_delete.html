@@ -1,0 +1,14 @@
+{% extends 'myapp/base.html' %}
+
+{% block content %}
+    <div class="container">
+        <div class="jumbotron text-center">
+            <form action="" method="post">{% csrf_token %}
+                <p>Are you sure you want to delete "{{ object }}"?</p>
+                <input class='btn btn-danger' type="submit" value="Confirm" />
+                <a href="{%url 'person_list'%}"><button class="btn btn-danger" type="button">Cancel</button></a>
+            </form>
+        </div>
+    </div>
+
+{% endblock %}
