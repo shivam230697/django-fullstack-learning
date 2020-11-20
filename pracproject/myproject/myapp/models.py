@@ -27,7 +27,7 @@ class CustomerEntry(models.Model):
     customer_name = models.CharField(max_length=200)
     vehicle_number = models.CharField(max_length=10)
     charges = models.IntegerField()
-    tare_weight = models.IntegerField()
+    tare_weight = models.IntegerField(null=True, blank=True)
     gross_weight = models.IntegerField(null=True, blank=True)
     net_weight = models.IntegerField(null=True, blank=True)
 

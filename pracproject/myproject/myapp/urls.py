@@ -14,6 +14,7 @@ urlpatterns = [
     url(r'^new_customer_entry/$', views.CustomerEntryView.as_view(), name='new_customer_entry'),
     url(r'^customer_list/$', views.CustomerListView.as_view(), name='customer_list'),
     url(r'^update_customer/(?P<pk>\d+)/$', views.UpdateCustomerView.as_view(), name='update_customer'),
-    url(r'^customer_information/(?P<pk>\d+)/$', views.CustomerInformation.as_view(), name='customer_info')
+    url(r'^customer_information/(?P<pk>\d+)/$', views.CustomerInformation.as_view(), name='customer_info'),
+    url(r'^practice/$', views.Practice.as_view(), name='practice')
 
 ]

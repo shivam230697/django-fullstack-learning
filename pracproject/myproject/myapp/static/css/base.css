@@ -1,0 +1,106 @@
+h1 {
+ color:yellow;
+
+}
+
+/*.footer {
+    background:rgb(240,240,240,1);
+    color:black;
+}*/
+.footer a{
+    color:white;
+}
+
+body {
+    background-size:100%, 100%;
+    z-index : -1;
+    background-color:yellow;
+}
+
+
+.base-header{
+    //background-color:black;
+    //border-style: solid;
+    //border-color:yellow;
+    //border-width:30px;
+    //border-radius: 25px;
+    //opacity:0.9%;
+    font-color:white;
+
+
+}
+
+.base-header .jumbotron{
+        background-color:black;
+
+
+}
+
+.base-main{
+    //background-color:red;
+    //border-style: solid;
+    //border-color:green;
+    //border-width:30px;
+    //border-radius: 25px;
+    margin:auto;
+}
+
+
+
+.base-main .jumbotron{
+    bottom:0;
+    top:0;
+    //left:0;
+    right:0;
+    margin-top:0px;
+    margin-bottom:0px;
+    margin-right:0px;
+    //margin-left:0px;
+    //position:center, center;
+    background-color:black;
+
+
+
+}
+
+.base-main .container{
+
+    //background-color:white;
+}
+
+.base-footer{
+    background-color:green;
+    //border-style: solid;
+    //border-color:yellow;
+    //border-width:30px;
+    //border-radius: 25px;
+    bottom:0;
+    height:0px;
+    width:100%;
+    //left:0;
+    right:0;
+    margin-bottom:0px;
+    margin-right:0px;
+    margin-left:0px;
+    margin-top:10px;
+
+
+
+
+}
+.base-footer .row{
+    //background-color:pink;
+    bottom:0;
+
+}
+
+
+
+
+
+
+
+
+
+
+

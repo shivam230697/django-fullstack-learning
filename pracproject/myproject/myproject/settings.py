@@ -116,7 +116,7 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [
-    "/home/sacumen/PycharmProjects/pracproject/myproject/myapp/stattic",
+    "/home/sacumen/PycharmProjects/pracproject/myproject/myapp/static",
 ]
 
 LOGIN_REDIRECT_URL = '/'

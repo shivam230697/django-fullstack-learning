@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <title>BASE HTML</title>
+
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+
+    <link rel="stylesheet" type="text/css" href="{%static 'css/practice.css' %}">
+
+    <!-- jQuery library -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
+    <!-- Latest compiled JavaScript -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+
+    <script type="text/javascript" src="{% static 'js/practice.js'%}"></script>
+
+
+</head>
+
+
+<body style="background-image:url('{%static 'myapp/images/bg4.jpg'%}');" >
+
+    <div class="base-navbar">
+        <nav class="navbar navbar-inverse">
+            <div class="container-fluid">
+                <div class="navbar-header">
+                  <a class="navbar-brand" href="#">MyApplication</a>
+                </div>
+
+                <ul class="nav navbar-nav">
+                    <li class=""><a href="{% url 'home_page' %}">Home</a></li>
+
+                </ul>
+
+                <ul class="nav navbar-nav navbar-right">
+
+                    {% if user.is_authenticated %}
+                        <li>
+                            <a href="{% url 'logout' %}" >Logout</a>
+                        </li>
+
+                        {% if user.is_superuser %}
+
+                            <li>
+                                <a >Welcome: {{ user.username }}</a>
+                            </li>
+
+                        {%else%}
+
+                            <li>
+                                <a> Welcome User: {{ user.username }}</a>
+                            </li>
+
+                        {% endif %}
+
+                    {% else %}
+
+                        <li><a  href="{% url 'user_login' %}" ><span  style="margin:5px;" class=""></span>Login</a></li>
+                        <li><a  href="{% url 'signup' %}" ><span  style="margin:5px;" class=""></span>SignUp</a></li>
+                        <li><a  href="{% url 'login' %}" ><span  style="margin:5px;" class="glyphicon glyphicon-user"></span></a></li>
+
+                    {% endif %}
+
+                </ul>
+            </div>
+        </nav>
+    </div>
+
+    <div class="base-sidebar">
+        <div class="list">
+            <div class="item">Home</div>
+            <div class="item">Service</div>
+            <div class="item">About</div>
+        </div>
+
+<!--        <div class="sidebar-btn">-->
+<!--            <span></span>-->
+<!--            <span></span>-->
+<!--            <span></span>-->
+<!--        </div>-->
+
+            <span class=" sidebar-btn glyphicon glyphicon-align-justify"></span>
+    </div>
+
+
+
+    <div class="base-header">
+        <div class="container">
+            <div class="jumbotron text-center">
+                <h1>Base</h1>
+            </div>
+        </div>
+    </div>
+
+    <div class="base-main">
+        <div class="container">
+            <div class="jumbotron">
+                main
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="base-footer">
+        <div class="row">
+            <div class="col-md-4 ">
+                <h3 class="text-uppercase text-center">Footer Content</h3>
+                <p>Here you can use rows and columns to organize your footer content.</p>
+            </div>
+            <div class="col-md-4 ">
+                <h5 class="text-uppercase ">Links</h5>
+                <ul class="list-unstyled">
+                    <li>link 1</li>
+                    <li>link 2</li>
+                    <li>link 3</li>
+                    <li>link 4</li>
+                </ul>
+            </div>
+            <div class="col-md-4 ">
+                <h5 class="text-uppercase ">Links</h5>
+                <ul class="list-unstyled">
+                    <li>link 1</li>
+                    <li>link 2</li>
+                    <li>link 3</li>
+                    <li>link 4</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class=" footer-bottom ">© 2020 Copyright:
+            <a href="https://mdbootstrap.com/"> MDBootstrap.com</a>
+        </div>
+    </div>
+
+
+
+</body>
+</html>

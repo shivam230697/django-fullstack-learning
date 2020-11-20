@@ -37,6 +37,10 @@ class CreatePersonView(CreateView):
     model = Person
     form_class = PersonForm
 
+    def form_valid(self, form):
+        print(form.cleaned_data.get("name")+form.cleaned_data.get("age"))
+        return super(CreatePersonView, self).form_valid(form)
+
 
 class DeletePersonView(LoginRequiredMixin, DeleteView):
     # login_url = '/accounts/login/'
@@ -61,6 +65,8 @@ class SignUpView(CreateView):
     success_url = reverse_lazy('user_login')
 
 
+
+
 class CustomerEntryView(CreateView):
     template_name = 'create_customer.html'
     form_class = CustomerEntryForm
@@ -80,12 +86,22 @@ class CustomerListView(ListView):
 class UpdateCustomerView(UpdateView):
     model = CustomerEntry
     form_class = CustomerEntryForm
+    template_name = 'customer_update_form.html'
     success_url = reverse_lazy('customer_list')
 
     def __init__(self, **kwargs):
         super().__init__(**kwargs)
 
 
-class CustomerInformation(DeleteView):
+class CustomerInformation(DetailView):
+
     model = CustomerEntry
     template_name = 'customer_info.html'
+
+
+class Practice(TemplateView):
+    template_name = 'practice.html'
+
+
+
+

@@ -1,0 +1,106 @@
+              html, body{
+
+    height:100%;
+
+}
+
+.base-main{
+
+    min-height:75.6%;
+    color:black;
+    display:flex;
+}
+
+.base-main .jumbotron{
+    background-color:pink;
+    //margin-left:20%;
+
+}
+
+.base-footer{
+    //display:block;
+    text-align: center;
+    background-color:red;
+    margin-top:0px;
+    bottom:0;
+    position: relative;
+    width:100%;
+    min-height:20%;
+}
+
+
+.base-footer .footer-bottom{
+    position: absolute;
+    width: 100%;
+    color: #fff;
+    line-height: 40px;
+    font-size: 2em;
+    text-align: center;
+    bottom:0;
+}
+
+.base-sidebar{
+    background:orange;
+    position:absolute;
+    height:100%;
+    width:200px;
+    z-index:1;
+    left:-200px;
+    transition: .5s ease;
+
+}
+
+.base-sidebar .sidebar-btn{
+    position:absolute;
+    top:0px;
+    right:-45px;
+    //background:#000;
+    width:40px;
+    font-size:25px;
+    height:50px;
+
+    color:orange;
+}
+
+.base-sidebar .sidebar-btn span{
+    color:pink;
+    font-size:30px;
+    background-color:green;
+    display: inline-block;
+
+}
+
+.base-sidebar .sidebar-btn span{
+    cursor:pointer;
+
+}
+
+.base-sidebar .list{
+    //background:green;
+    padding:5px 5px;
+}
+
+.base-sidebar .list .item{
+    //background-color:red;
+    padding:5px 5px;
+    text-align: center;
+    border-bottom:2px solid black;
+    font-size:20px;
+
+}
+.base-sidebar .list .item:hover{
+    //background:blue;
+    font-size:25px;
+    cursor:pointer;
+    transition:0.1s ease;
+
+
+}
+
+
+
+
+.base-sidebar.active{
+    left:0px;
+    transition: .5s ease;
+}
